@@ -47,7 +47,7 @@ function NewsResult() {
       console.log(e.selected);
       setItemOffset((e.selected * itemsPerPage) % data?.data.length);
     },
-    [data?.data.length],
+    [data?.data?.length]
   );
   if (!search) return <SearchTermRequired />;
   if (isLoading)
@@ -70,9 +70,9 @@ function NewsResult() {
       <div className="flex justify-center items-center flex-wrap m-auto w-[900px]">
         {data?.data.length > 0 ? (
           currentItems?.map(({title, content_url, image}, index) => (
-            <a href={content_url} target="blank" rel="noreferrer" className="p-3 w-48 h-48">
+            <a href={content_url} target="_blank" rel="noreferrer" className="p-3 w-36 h-36">
               <img src={image} alt={title} loading="lazy" className="hover:shadow-xl" />
-              <p className="w-36 break-words text-sm mt-3 hover:underline">{title.substring(0, 10)}...</p>
+              <p className="w-36 break-words text-sm mt-2 hover:underline">{title.substring(0, 10)}...</p>
             </a>
           ))
         ) : (
