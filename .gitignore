@@ -192,3 +192,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# API key
+*.env
