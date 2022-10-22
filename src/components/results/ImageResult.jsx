@@ -7,7 +7,7 @@ import {Oval} from 'react-loader-spinner';
 import NoResult from './NoResult';
 import ReactPaginate from 'react-paginate';
 
-function NewsResult() {
+function ImageResult() {
   const location = useLocation();
   const search = new URLSearchParams(location.search).get('q');
   const itemsPerPage = 10;
@@ -16,7 +16,7 @@ function NewsResult() {
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   const {data, isLoading} = useQuery(
-    ['newsResult', search],
+    ['imageResult', search],
     () =>
       axios
         .get(`https://image-search10.p.rapidapi.com/index.php`, {
@@ -99,4 +99,4 @@ function NewsResult() {
   );
 }
 
-export default NewsResult;
+export default ImageResult;
